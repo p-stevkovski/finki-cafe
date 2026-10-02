@@ -1,0 +1,110 @@
+:root {
+  --dark: #303079;
+  --accent: #4992CF;
+  --white: #fff;
+  --text: #22224d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.landing-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.landing-card {
+  background: var(--white);
+  padding: 3.5rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(48, 48, 121, 0.25);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(48, 48, 121, 0.3);
+}
+
+.landing-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.landing-card h1 {
+  color: var(--dark);
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.landing-card p {
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+  letter-spacing: 0.3px;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent);
+  font-size: 0.95rem;
+  min-width: 140px;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(73, 146, 207, 0.3);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .landing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .landing-card h1 {
+    font-size: 1.5rem;
+  }
+}

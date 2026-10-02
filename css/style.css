@@ -101,6 +101,13 @@ section {
   font-weight: 700;
   font-size: 1.2rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand__logo {
+  border-radius: 8px;
 }
 
 .nav-list {
