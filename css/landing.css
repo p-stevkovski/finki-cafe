@@ -14,6 +14,19 @@
   padding: 0;
 }
 
+/* Remove mobile tap highlight for interactive elements on the landing page */
+a,
+button,
+input,
+textarea,
+select,
+label,
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
+
 html,
 body {
   height: 100%;
