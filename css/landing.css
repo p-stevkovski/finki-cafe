@@ -1,0 +1,129 @@
+/* Base */
+:root {
+  --dark: #303079;
+  --accent: #4992cf;
+  --white: #fff;
+  --text: #22224d;
+  --radius: 16px;
+  --shadow: 0 12px 40px rgba(48, 48, 121, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove mobile tap highlight for interactive elements on the landing page */
+a,
+button,
+input,
+textarea,
+select,
+label,
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--dark);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+/* Layout */
+.landing-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.landing-card {
+  padding: 3.5rem 2.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(48, 48, 121, 0.3);
+}
+
+.landing-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 0;
+}
+
+.landing-card h1 {
+  margin-bottom: 0.8rem;
+  color: var(--dark);
+  font-size: 2.2rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.landing-card p {
+  margin-bottom: 2.5rem;
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  opacity: 0.8;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+/* Actions */
+.btn {
+  display: inline-block;
+  min-width: 140px;
+  padding: 0.85rem 1.8rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(73, 146, 207, 0.3);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .landing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .landing-card h1 {
+    font-size: 1.5rem;
+  }
+}
