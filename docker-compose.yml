@@ -1,0 +1,23 @@
+services:
+  frontend:
+    image: node:22
+    command: ["node", "server.js"]
+    cpus: 0.5
+    mem_limit: 512m
+    volumes:
+      - .stack-data/uploads:/app/uploads   # persistent data only under .stack-data/
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/health').then(r=>process.exit(r.ok?0:1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  api:
+    image: python:3.12
+    command: ["python", "app.py"]
+    cpus: 0.25
+    mem_limit: 256m
+    depends_on:
+      frontend:
+        condition: service_healthy
